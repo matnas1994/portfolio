@@ -1,0 +1,52 @@
+.header{
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Saira Stencil One', cursive;
+    height: 100vh;
+    background: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('../../images/background.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    z-index: -1;
+
+    &__title{
+        font-family: inherit;
+        text-align: center;
+        font-size: 80px;
+    }
+
+    &__subtitle{
+        font-family: inherit;
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 769px) {
+    .header{
+        &__title{
+            font-size: 60px;
+        }
+    
+        &__subtitle{
+            font-size: 40px;
+        }
+    }
+}
+
+
+@media (max-width: 425px) {
+    .header{
+        &__title{
+            font-size: 45px;
+        }
+    
+        &__subtitle{
+            font-size: 25px;
+        }
+    }
+}

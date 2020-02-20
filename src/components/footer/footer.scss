@@ -1,0 +1,28 @@
+.footer{
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #1A1E36;
+    padding: 20px;
+    color: white;
+
+    &__text{
+        text-align: center;
+        margin-bottom: 0;
+    }
+
+    .social{
+        text-align: center;
+        margin: 20px auto;
+        &__link{
+            text-align: center;
+            color:  white;
+            margin-left: 20px;
+        }
+        
+        &__icon{
+            font-size: 2rem;
+        }
+    }
+}

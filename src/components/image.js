@@ -13,20 +13,69 @@ import Img from "gatsby-image"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const Image = () => {
+const Image = ({name, sharp}) => {
   const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
+   query Images {
+     myPhoto: file(relativePath: {eq: "photo.png"}){
+       id
+       childImageSharp{
+         fixed(width:200){
+           ...GatsbyImageSharpFixed
+         }
+         fluid{
+          ...GatsbyImageSharpFluid
         }
+       }
+     },
+     live: file(relativePath: {eq: "live.png"}){
+      id
+      childImageSharp{
+        fixed(width:200){
+          ...GatsbyImageSharpFixed
+        }
+        fluid{
+         ...GatsbyImageSharpFluid
+       }
+      }
+    },
+     superProject: file(relativePath: {eq: "project/test.jpg"}){
+      id
+      childImageSharp{
+        fixed(width:200){
+          ...GatsbyImageSharpFixed
+        }
+        fluid{
+         ...GatsbyImageSharpFluid
+       }
+      }
+    },
+    workTimeRecords: file(relativePath: {eq: "project/workTimeRecords.jpg"}){
+      id
+      childImageSharp{
+        fixed(width:200){
+          ...GatsbyImageSharpFixed
+        }
+        fluid{
+         ...GatsbyImageSharpFluid
+       }
+      }
+    },
+    lepszyProjekt: file(relativePath: {eq: "project/shoppingApp.jpg"}){
+      id
+      childImageSharp{
+        fixed(width:200){
+          ...GatsbyImageSharpFixed
+        }
+        fluid{
+         ...GatsbyImageSharpFluid
+       }
       }
     }
+   }
   `)
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+
+  return (<Img fluid={data[name].childImageSharp[sharp]}  />)
 }
 
 export default Image

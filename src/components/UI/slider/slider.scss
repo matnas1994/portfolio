@@ -1,0 +1,46 @@
+@keyframes sliding {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+}
+
+
+.slider{
+    display: flex;
+
+    &__mask{
+        overflow: hidden;
+        position: relative;
+        padding: 1rem 0;
+
+        &::before, &::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 2rem;
+            height: 100%;
+        }
+
+        &::before{
+            left: 0;
+            background-image: linear-gradient(to right, white, transparent 50%);
+        }
+
+        &::after{
+            right: 0;
+            background-image: linear-gradient(to left, white, transparent 50%);
+        }
+    }
+
+    &__wrapper{
+        display: flex;
+        width: 100%;
+        animation: sliding 10s infinite linear;
+        animation-direction:  alternate-reverse;
+    }
+}  
+
+

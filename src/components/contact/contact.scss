@@ -1,0 +1,102 @@
+.contact{
+    font-family: "Saira Stencil One", cursive;
+    background: #1A1E36;
+
+    &__header{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title{
+        font-family: inherit;
+        color: white;
+        font-size: 3rem;
+        margin: 50px auto;
+    }
+    .contact-form{
+        margin: 20px auto;
+        margin-bottom: 0;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+
+
+        &__btns{
+            margin: 20px auto;
+            width: 70%;
+            display: flex;
+            justify-content: space-between;
+        } 
+    }
+
+
+}
+
+.btn{
+    padding: 10px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 1px 4px 5px rgba(255, 255, 255, 0.5);
+    transition: box-shadow 0.5s;
+
+    &:active{
+        box-shadow: none;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        box-shadow: none;
+    }
+
+    &--submit{
+        width: 55%;
+        border: none;
+        background-color: #fff;
+    }
+
+    &--clean{
+        border: 1px solid white;
+        background-color: transparent;
+        color:white;
+        width: 40%;
+    }
+}
+
+.status{
+    text-align: center;
+    line-height: 1;
+    &--success{
+        color: white;
+        font-size: 50px;
+    }
+
+    &--error{
+        font-size: 20px;
+        color: red;
+    }
+}
+
+@media (max-width: 831px){
+    .contact{
+        .contact-form{
+            width: 90%;
+            &__btns{
+                width: 80%;
+            }
+        }
+    }
+
+    .status{
+        &--error{
+            font-size: 12px;
+        }
+    }
+}
+
+@media(max-width: 500px){
+    .status{
+        &--success{
+            font-size: 35px;
+        }
+    }
+}

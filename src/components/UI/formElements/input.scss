@@ -1,0 +1,44 @@
+.form-label{
+    font-size: 1.5rem;
+    color: white;
+}
+  
+.form-input{
+    margin: 5px 0;
+    height: 5vh;
+    background-color: #242943;
+    border: none;
+    padding: 20px;
+    color: white;
+}
+
+.form-area{
+    margin: 5px 0;
+    background-color: #242943;
+    border: none;
+    color: white;
+}
+
+.form-control{
+    margin: 10px auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    &--invalid{
+      .form-input{
+        border: 3px solid red;
+      }
+
+      .form-area{
+        border: 3px solid red;
+      }
+
+      .form-label{
+        color: red;
+      }
+
+      .error-message{
+        color: red;
+      }
+    }
+}

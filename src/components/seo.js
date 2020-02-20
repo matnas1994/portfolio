@@ -68,7 +68,10 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <script src="https://kit.fontawesome.com/9b312434e8.js" crossorigin="anonymous"></script>
+      <link href="https://fonts.googleapis.com/css?family=Roboto|Saira+Stencil+One&display=swap&subset=latin-ext" rel="stylesheet"/>
+    </Helmet>
   )
 }
 
